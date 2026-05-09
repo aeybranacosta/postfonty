@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Community Font Drop</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #1a1a1a; color: white; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .upload-zone { border: 2px dashed #444; padding: 30px; text-align: center; margin-bottom: 20px; }
+        .font-list { display: grid; gap: 10px; }
+        .font-item { background: #333; padding: 15px; border-radius: 8px; display: flex; justify-content: space-between; }
+        button { background: #007bff; color: white; border: none; padding: 10px 20px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>OTF Downloader & Sharer</h1>
+        <div class="upload-zone">
+            <input type="file" id="fontInput" accept=".otf,.ttf">
+            <button onclick="uploadFont()">Post Font</button>
+        </div>
+        <div class="font-list" id="fontList">
+            </div>
+    </div>
+
+    <script>
+        // Note: For a true "No Review" automated post on GitHub, 
+        // you usually need a tiny backend worker or a GitHub Action Trigger.
+        async function uploadFont() {
+            const file = document.getElementById('fontInput').files[0];
+            if(!file) return alert("Select a font first!");
+            
+            alert("Uploading to GitHub... (This usually triggers a Build process)");
+            // Logic to trigger a GitHub Repository Dispatch would go here
+        }
+    </script>
+</body>
+</html>
+
